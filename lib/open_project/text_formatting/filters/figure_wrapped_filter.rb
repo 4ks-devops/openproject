@@ -33,15 +33,7 @@ module OpenProject::TextFormatting
       include ActionView::Helpers::TagHelper
 
       def call
-        doc.search('table', 'img').each do |element|
-          case element.name
-          when 'img', 'table'
-            wrap_element(element)
-          else
-            # nothing
-          end
-        end
-
+        doc.search('table').each(&method(:wrap_element))
         doc
       end
 
