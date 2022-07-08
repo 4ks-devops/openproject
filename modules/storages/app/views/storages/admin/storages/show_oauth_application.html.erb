@@ -5,7 +5,12 @@
 
 <div class="op-toast -warning -with-bottom-spacing">
   <div class="op-toast--content">
-    <p><%= t('repositories.storage.oauth_application_details') %></p>
+    <p>
+      <%= t('repositories.storage.oauth_application_details') %>
+      <%= link_to t('repositories.storage.oauth_application_details_link_text'),
+                  URI::join(@oauth_application.integration.host, "settings/admin/openproject").to_s,
+                  target: 'blank' %>
+    </p>
   </div>
 </div>
 

@@ -43,9 +43,13 @@ See COPYRIGHT and LICENSE files for more details.
                    {
                      disabled: @object.persisted? || ::Storages::Storage::PROVIDER_TYPES.count == 1
                    } %>
+      <span class="form--field-instructions"><%= t('storages.instructions.type') %> <%= t('storages.instructions.type_link_text') %></span>
     </div>
     <div class="form--field -required">
-      <%= f.text_field :name, required: true, container_class: '-slim' %>
+      <%= f.text_field :name,
+                       required: true,
+                       placeholder: I18n.t('storages.provider_types.nextcloud'),
+                       container_class: '-slim' %>
       <span class="form--field-instructions"><%= t('storages.instructions.name') %></span>
     </div>
     <div class="form--field -required">

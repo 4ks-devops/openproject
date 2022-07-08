@@ -55,7 +55,7 @@ describe 'Admin storages', :storage_server_helpers, with_flag: { storages_module
     mock_server_capabilities_response("https://example.com")
     page.find('#storages_storage_name').set("NC 1")
     page.find('#storages_storage_host').set("https://example.com")
-    page.find('button[type=submit]', text: "Continue").click
+    page.find('button[type=submit]', text: "Save and continue setup").click
 
     # Show created oauth application
     storage_type = I18n.t('storages.provider_types.nextcloud')
