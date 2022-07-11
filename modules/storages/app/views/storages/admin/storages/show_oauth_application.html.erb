@@ -1,7 +1,7 @@
 <!-- Standard Ruby view, please see the controller for comments -->
 <% html_title t(:label_administration), t("project_module_storages"), @object.name, "#{t("storages.provider_types.#{@object.provider_type}")} #{t("storages.label_oauth_application_details")}" %>
-<% local_assigns[:additional_breadcrumb] = "#{t("storages.provider_types.#{@object.provider_type}")} #{t("storages.label_oauth_application_details")}" %>
-<%= toolbar title: "#{t("storages.provider_types.#{@object.provider_type}")} #{t("storages.label_oauth_application_details")}" %>
+<% local_assigns[:additional_breadcrumb] = %W[#{@object.name} #{t("storages.label_oauth_breadcrumb")}] %>
+<%= toolbar title: "OpenProject #{t("storages.label_oauth_application_details")}" %>
 
 <div class="op-toast -warning -with-bottom-spacing">
   <div class="op-toast--content">
